@@ -30,7 +30,7 @@ Sick of trying to figure out who is standing-in?  Or looking for smurfs?  This s
 
 Since Dota players are inconvenient, and often choose completely different IDs for FACEIT, sometimes, we would like to easily see the Steam ID for a player on FACEIT.  This script adds the IDs (ID32, ID64 and ID) to the player's profile.
 
-Except...  FACEIT's site is complete garbage, with obfuscated classes and dynamic HTML.  If you ever navigate to a player's profile (e.g. tournament &gt; bracket &gt; team &gt; player &gt; expand their profile), you will need to refresh the page in order to view it.
+Except...  FACEIT's site is complete garbage, with obfuscated classes and dynamic HTML.  If you ever navigate to a player's profile (e.g. tournament &gt; bracket &gt; team &gt; player &gt; expand their profile), **you will need to refresh the page in order to view it.**
 
 There is probably a way to do this automatically, but I couldn't figure it out.
 
