@@ -2,7 +2,7 @@
 This repository contains various useful Greasemonkey scripts that I use to help my editing on Dota 2 Liquipedia.
 
 ## Install
-These scripts are [Greasemonkey](https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/) scripts, that inject JavaScript into pages to run custom scripts.  This therefore requires Firefox and the Greasemonkey extension
+These scripts are [Greasemonkey](https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/) scripts, that inject JavaScript into pages to run custom scripts.  This therefore requires Firefox and the Greasemonkey extension.
 
 This may work with Google Chrome and Tampermonkey, but this is untested.
 
