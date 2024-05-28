@@ -38,6 +38,13 @@ Additionally, since FACEIT uses obfuscated classes, it sometimes changes these c
 
 [Get this script](faceit-player-id-shower.js)
 
+### Show player IDs on a player's profile on ChallengerMode
+![Player IDs on ChallengerMode](images/challengermode-id-shower.png "Player IDs on ChallengerMode")
+
+This shows the player IDs on a player's profile page on ChallengerMode.
+
+[Get this script](challengermode-player-id-shower.js)
+
 ## Contact
 If you need to contact me, it is probably best if you leave me a message on my [Liquipedia Dota 2 talk page](https://liquipedia.net/dota2/User_talk:X42bn6).
 
