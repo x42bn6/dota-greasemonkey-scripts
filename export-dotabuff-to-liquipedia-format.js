@@ -47,10 +47,10 @@ var generateOutput = function(flip) {
     var components = duration.split(":");
     if (components.length === 3) {
       minutes = parseInt(components[0]) * 60 + parseInt(components[1]);
-      seconds = parseInt(components[2]);
+      seconds = parseInt(components[2]).toString().padStart(2, '0');
     } else {
       minutes = parseInt(components[0]);
-      seconds = parseInt(components[1]);
+      seconds = parseInt(components[1]).toString().padStart(2, '0');
     }
     return minutes + "m" + seconds + "s";
   }
