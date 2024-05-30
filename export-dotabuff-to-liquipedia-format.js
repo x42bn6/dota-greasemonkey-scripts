@@ -19,7 +19,7 @@ var generateOutput = function(flip) {
     if (clazz === "radiant" || clazz === "dire") {
       sides.push(clazz);
       if ($(this).find("header span.victory-icon")[0]) {
-        winner = sides.length;
+        winner = $(this).attr("class");
       }
     }
   });
@@ -87,7 +87,20 @@ var generateOutput = function(flip) {
   }
   s += "\n";
   s += "|length=" + convertMatchDuration($("div.match-victory-subtitle span.duration").text());
-  s += "|winner=" + (flip ? (winner === "1" ? "2" : "1") : winner);
+  if (flip) {
+    if (winner === "radiant") {
+      winnerIndex = 2;
+    } else {
+      winnerIndex = 1;
+    }
+  } else {
+    if (winner === "radiant") {
+      winnerIndex = 1;
+    } else {
+      winnerIndex = 2;
+    }
+  }
+  s += "|winner=" + winnerIndex;
   s += "\n";
   s += "}}"
 
