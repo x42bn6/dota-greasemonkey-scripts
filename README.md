@@ -45,6 +45,13 @@ This shows the player IDs on a player's profile page on ChallengerMode.
 
 [Get this script](challengermode-player-id-shower.js)
 
+### Export Dotabuff match to Liquipedia format
+![Export Dotabuff to Liquipedia format](images/export-dotabuff-to-liquipedia-format.png "Export Dotabuff to Liquipedia format")
+
+Sometimes, the Valve API goes down.  Dotabuff is more resilient for some reason.  This script will add links to the match screen to export the match to Liquipedia format.  Note the order is what is on Liquipedia (e.g. https://liquipedia.net/dota2/FISSURE_Universe/2 Grand Final is Entity (top) vs. OG (bottom), so select Entity vs. OG).
+
+[Get this script](export-dotabuff-to-liquipedia-format.js)
+
 ## Contact
 If you need to contact me, it is probably best if you leave me a message on my [Liquipedia Dota 2 talk page](https://liquipedia.net/dota2/User_talk:X42bn6).
 
