@@ -46,7 +46,7 @@ var generateOutput = function(flip) {
     var seconds = -1;
     var components = duration.split(":");
     if (components.length === 3) {
-      minutes = parseInt(components[0] * 60 + components[1]);
+      minutes = parseInt(components[0]) * 60 + parseInt(components[1]);
       seconds = parseInt(components[2]);
     } else {
       minutes = parseInt(components[0]);
