@@ -61,7 +61,7 @@ var generateOutput = function(flip) {
     var output = "|team" + n + "side=" + draft.side;
     output += "\n";
     for (var j = 0; j < draft.picks.length; j++) {
-      output += "|t" + n + "p" + (j + 1) + "=" + draft.picks[j];
+      output += "|t" + n + "h" + (j + 1) + "=" + draft.picks[j];
     }
     
     // Sometimes there's no bans...
@@ -86,7 +86,7 @@ var generateOutput = function(flip) {
     s += generateDraftOutput(2, outputBottom);
   }
   s += "\n";
-  s += "|length=" + convertMatchDuration($(".duration:eq(0)").text());
+  s += "|length=" + convertMatchDuration($("div.match-victory-subtitle span.duration").text());
   s += "|winner=" + (flip ? (winner === "1" ? "2" : "1") : winner);
   s += "\n";
   s += "}}"
