@@ -25,11 +25,7 @@ $(document).ready(function() {
 
   // This bit is by far the most prone to change.  If this script doesn't work, try changing this.
   // In Firefox, right-click the Steam icon on the player's page, and go to Inspect.  Look for the element whose href attribute is to the Steam profile.
-  // Then the new selector is:
-  // - Letter "a" (anchor)
-  // - Take the class attribute, replace spaces with a full-stop
-  // - Add [href*=\"http://steamcommunity.com\"] to the end.
-  var selector = "a.sc-lmJFLr.sc-gNXrtx.kuAhHR.ewaTZw[href*=\"http://steamcommunity.com\"]";
+  var selector = "a[href*=\"http://steamcommunity.com\"]";
   waitForEl(selector, function() {
     var addIds = function(id64) {
       var id32 = Number(BigInt(id64) - BigInt("76561197960265728"));
