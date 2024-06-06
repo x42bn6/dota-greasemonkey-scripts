@@ -112,15 +112,19 @@ $(document).ready(function() {
     var teamA = "Radiant";
     var teamB = "Dire";
     var aOrB = 0;
-    var teamNameSelector = function(n) {
-      return "section header a span.team-text-full:eq(" + n + ")";
+    
+    var teamSelector = function(side) {
+      return "div.team-results > section." + side + " > header > a.team-link > span.team-text";
     }
-    if ($(teamNameSelector(0))) {
-      teamA = $(teamNameSelector(0)).text()
+    
+    console.log($(teamSelector("dire")))
+    if ($(teamSelector("radiant")).length > 0) {
+      teamA = $(teamSelector("radiant")).text();
     }
-    if ($(teamNameSelector(1))) {
-      teamB = $(teamNameSelector(1)).text()
+    if ($(teamSelector("dire")).length > 0) {
+      teamB = $(teamSelector("dire")).text();
     }
+    
     return [ teamA, teamB ];
   }
   let teamA, teamB;
@@ -128,7 +132,7 @@ $(document).ready(function() {
   
   var normal = $("<a>", {
     class: "esports-team esports-link team-link",
-    text: "Copy Liquipedia output for " + teamA + " vs. " + teamB + " to clipboard",
+    html: "Copy Liquipedia output for <span style=\"color: #92A525;\">" + teamA + "</span> vs. <span style=\"color: #C23C2A;\">" + teamB + "</span> to clipboard",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -138,7 +142,7 @@ $(document).ready(function() {
   
   var flipped = $("<a>", {
     class: "esports-team esports-link team-link",
-    text: "Copy Liquipedia output for " + teamB + " vs. " + teamA + " to clipboard",
+    html: "Copy Liquipedia output for <span style=\"color: #C23C2A;\">" + teamB + "</span> vs. <span style=\"color: #92A525;\">" + teamA + "</span> to clipboard",
     href: "#",
     click: function(event) {
       event.preventDefault();
