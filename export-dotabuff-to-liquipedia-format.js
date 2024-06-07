@@ -7,13 +7,20 @@
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // ==/UserScript==
 var generateOutput = function(flip) {
-  var s = "|map1={{Map\n";
   var i = 0;
   var sides = [];
+  var mapNumber = 1;
   var winner = 0;
   var teamIndex = 1;
   var pickIndex = 1;
   var banIndex = 1;
+  
+  // Map number
+  if ($("div.game-link.active").length > 0) {
+    mapNumber = $("div.game-link.active a").text().split(" ")[1]
+  }
+  
+  
   $("section").each(function() {
     var clazz = $(this).attr("class")
     if (clazz === "radiant" || clazz === "dire") {
@@ -23,6 +30,8 @@ var generateOutput = function(flip) {
       }
     }
   });
+  
+  var s = "|map" + mapNumber + "={{Map\n";
 
   var generateDraft = function(n, side, winner) {
     var output = ""
@@ -117,7 +126,6 @@ $(document).ready(function() {
       return "div.team-results > section." + side + " > header > a.team-link > span.team-text";
     }
     
-    console.log($(teamSelector("dire")))
     if ($(teamSelector("radiant")).length > 0) {
       teamA = $(teamSelector("radiant")).text();
     }
