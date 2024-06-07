@@ -20,7 +20,6 @@ var generateOutput = function(flip) {
     mapNumber = $("div.game-link.active a").text().split(" ")[1]
   }
   
-  
   $("section").each(function() {
     var clazz = $(this).attr("class")
     if (clazz === "radiant" || clazz === "dire") {
