@@ -34,8 +34,6 @@ Except...  FACEIT's site is complete garbage, with obfuscated classes and dynami
 
 There is probably a way to do this automatically, but I couldn't figure it out.
 
-Additionally, since FACEIT uses obfuscated classes, it sometimes changes these class names and breaks things.  There are instructions in the script on how to update it.  Or you can ask me to update it.
-
 [Get this script](faceit-player-id-shower.js)
 
 ### Show player IDs on a player's profile on ChallengerMode
@@ -48,7 +46,7 @@ This shows the player IDs on a player's profile page on ChallengerMode.
 ### Export Dotabuff match to Liquipedia format
 ![Export Dotabuff to Liquipedia format](images/export-dotabuff-to-liquipedia-format.png "Export Dotabuff to Liquipedia format")
 
-Sometimes, the Valve API goes down.  Dotabuff is more resilient for some reason.  This script will add links to the match screen to export the match to Liquipedia format.  Note the order is what is on Liquipedia (e.g. in [FISSURE Universe Episode 2](https://liquipedia.net/dota2/FISSURE_Universe/2), the Grand Final is Entity (top) vs. OG (bottom), so select Entity vs. OG).
+Sometimes, the Valve API goes down.  Dotabuff is more resilient for some reason.  This script will add links to the match screen to export the match to Liquipedia format.  Note the order should be what is on Liquipedia (e.g. in [FISSURE Universe Episode 2](https://liquipedia.net/dota2/FISSURE_Universe/2), the Grand Final is Entity (top) vs. OG (bottom), so select Entity vs. OG).  It also exports the map number (`|map1=`/`|map2=`/etc.); however, this is reliant on both teams selecting the same team consistently (this is not always the case).  As a result, be sure to check the map number before submitting changes.  You can also preview your edits and check the warning box at the top to see if there are any duplicate parameters - which indicate that a duplicate map number was used within a series.
 
 [Get this script](export-dotabuff-to-liquipedia-format.js)
 
