@@ -54,6 +54,15 @@ It also exports the map number (`|map1=`/`|map2=`/etc.); however, this is relian
 
 [Get this script](export-dotabuff-to-liquipedia-format.js)
 
+### Export tweet to Liquipedia ref
+![Export tweet to Liquipedia ref](images/export-tweet-to-liquipedia-ref.png "Export tweet to Liquipedia ref")
+
+This script adds a link to export a tweet to a Liquipedia ref, copying it to the clipboard.
+
+Note that this is not perfect.  You may need to strip off emojis and tweak some things.  You may need to add additional parameters like `accessdate` and `language`.  But it is a start.
+
+[Get this script](export-tweet-to-liquipedia-ref.js)
+
 ## Contact
 If you need to contact me, it is probably best if you leave me a message on my [Liquipedia Dota 2 talk page](https://liquipedia.net/dota2/User_talk:X42bn6).
 
