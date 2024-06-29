@@ -36,7 +36,6 @@ $(document).ready(function() {
       var hrefSplit = $(this).attr("href").split("/");
       var id64 = hrefSplit[hrefSplit.length-1];
       var append = addIds(id64);
-      console.log(append);
       $(this).parent().append(append);
     });
   });
