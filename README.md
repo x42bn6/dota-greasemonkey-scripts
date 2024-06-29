@@ -57,7 +57,7 @@ It also exports the map number (`|map1=`/`|map2=`/etc.); however, this is relian
 ### Export tweet to Liquipedia ref
 ![Export tweet to Liquipedia ref](images/export-tweet-to-liquipedia-ref.png "Export tweet to Liquipedia ref")
 
-This script adds a link to export a tweet to a Liquipedia ref, copying it to the clipboard.
+This script adds a link to export a tweet to a Liquipedia ref, copying it to the clipboard.  Because Twitter renders the page dynamically, you will have to refresh the page on the tweet page to add this link.
 
 Note that this is not perfect.  You may need to strip off emojis and tweak some things.  You may need to add additional parameters like `accessdate` and `language`.  But it is a start.
 
