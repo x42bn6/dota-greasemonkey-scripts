@@ -58,7 +58,6 @@ $(document).ready(function() {
         }
       });
       var surround = copy.wrap("<div class=\"css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-1qd0xha r-a023e6 r-rjixqe r-16dba41\"></div>");
-      console.log(surround);
       $("article[tabindex=\"-1\"] time").parent().parent().parent().append(" · ").append(surround);
     });
   });
