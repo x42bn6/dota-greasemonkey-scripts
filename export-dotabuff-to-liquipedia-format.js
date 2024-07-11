@@ -144,7 +144,13 @@ $(document).ready(function() {
     click: function(event) {
       event.preventDefault();
       generateOutput(false);
+      $("#normalTick").show();
+      $("#flippedTick").hide();
     }
+  });
+  var normalTick = $("<span>", {
+    id: "normalTick",
+    html: "✓"
   });
   
   var flipped = $("<a>", {
@@ -154,10 +160,18 @@ $(document).ready(function() {
     click: function(event) {
       event.preventDefault();
       generateOutput(true);
+      $("#normalTick").hide();
+      $("#flippedTick").show();
     }
   });
+  var flippedTick = $("<span>", {
+    id: "flippedTick",
+    html: "✓"
+  });
   
-  $("div.header-content-title").append(normal);
+  normalTick.hide();
+  flippedTick.hide();
+  $("div.header-content-title").append(normal).append(" ").append(normalTick);
   $("div.header-content-title").append("<br/>");
-  $("div.header-content-title").append(flipped);
+  $("div.header-content-title").append(flipped).append(" ").append(flippedTick);
 });
