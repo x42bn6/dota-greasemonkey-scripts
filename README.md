@@ -4,7 +4,7 @@ This repository contains various useful Greasemonkey scripts that I use to help 
 ## Install
 These scripts are [Greasemonkey](https://addons.mozilla.org/en-GB/firefox/addon/greasemonkey/) scripts, that inject JavaScript into pages to run custom scripts.  This therefore requires Firefox and the Greasemonkey extension.
 
-This may work with Google Chrome and Tampermonkey, but this is untested.
+This may work with Google Chrome and Tampermonkey/Violentmonkey, but this is untested.  If using Google Chrome, [Tampermonkey requires Developer Mode to be enabled](https://github.com/Tampermonkey/tampermonkey/issues/644#issuecomment-2311996579), whilst [Violentmonkey requires a flag to disable Manifest V2 extensions to be disabled.](https://github.com/violentmonkey/violentmonkey/issues/1934)
 
 After installing Firefox and Greasemonkey, go to the Extensions menu (jigsaw icon) &gt; Greasemonkey &gt; New user script &gt; Copy-paste whichever script you want.  Make sure each script is in its own file.
 
