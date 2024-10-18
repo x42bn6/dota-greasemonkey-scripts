@@ -44,7 +44,7 @@ This shows the player IDs on a player's profile page on ChallengerMode.
 [Get this script](challengermode-player-id-shower.js)
 
 ### Export Dotabuff match to Liquipedia format
-![Export Dotabuff to Liquipedia format](images/export-dotabuff-to-liquipedia-format.png "Export Dotabuff to Liquipedia format")
+![Export Dotabuff to Liquipedia format](images/export-dotabuff-to-liquipedia-format.png? "Export Dotabuff to Liquipedia format")
 
 Sometimes, the Valve API goes down.  Dotabuff is more resilient for some reason.  This script will add links to the match screen to export the match to Liquipedia format to your clipboard.
 
