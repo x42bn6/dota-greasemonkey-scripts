@@ -46,7 +46,7 @@ This shows the player IDs on a player's profile page on ChallengerMode.
 ### Export Dotabuff match to Liquipedia format
 ![Export Dotabuff to Liquipedia format](images/export-dotabuff-to-liquipedia-format.png "Export Dotabuff to Liquipedia format")
 
-Sometimes, the Valve API goes down.  Dotabuff is more resilient for some reason.  This script will add links to the match screen to export the match to Liquipedia format to your clipboard.
+Sometimes, the Valve API goes down (as of October 2024, it has been down since the 7.37 release).  Liquipedia has processing via SAP, but this does not work for all matches (in particular, smaller tournaments aren't in scope).  Dotabuff, however, is more resilient, as it parses replays.  This script will add links to the match screen to export the match from Dotabuff to Liquipedia format to your clipboard.
 
 Note the order should be what is on Liquipedia (e.g. in [FISSURE Universe Episode 2](https://liquipedia.net/dota2/FISSURE_Universe/2), the Grand Final is Entity (top) vs. OG (bottom), so select Entity vs. OG).
 
