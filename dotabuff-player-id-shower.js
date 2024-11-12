@@ -30,28 +30,25 @@ $(document).ready(function() {
     $(this).parent().append(addIds(id32));
   });
 
-  // Keep track of the last clicked div
   var lastClickedDiv = null;
 
-  // Add click event to copy the content to clipboard and show tick
   $(document).on('click', '.steam-id', function() {
-    var content = $(this).text();
-    
-    // Use the Clipboard API to copy the content
+    var content = $(this).clone()
+      .find('.tick').remove()
+      .end()
+      .text();
+
     navigator.clipboard.writeText(content).catch(function(err) {
       console.error('Error copying to clipboard: ', err);
     });
 
-    // If there was a previously clicked div, remove the tick
     if (lastClickedDiv) {
       lastClickedDiv.find('.tick').remove();
     }
 
-    // Add a tick next to the clicked div
     var tick = "<span class='tick' style='color: green; margin-left: 5px;'>✔</span>";
     $(this).append(tick);
 
-    // Update the last clicked div
     lastClickedDiv = $(this);
   });
 });
