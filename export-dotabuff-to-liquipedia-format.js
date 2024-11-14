@@ -6,22 +6,11 @@
 // @include     https://www.dotabuff.com/matches/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // ==/UserScript==
-var getWinner = function() {
-  $("section").each(function() {
-    var clazz = $(this).attr("class")
-    if (clazz === "radiant" || clazz === "dire") {
-      if ($(this).find("header span.victory-icon")[0]) {
-        return $(this).attr("class");
-      }
-    }
-  });
-}
-
 var generateOutput = function(flip) {
   var i = 0;
   var sides = [];
   var mapNumber = 1;
-  var winner = getWinner();
+  var winner = 0;
   var teamIndex = 1;
   var pickIndex = 1;
   var banIndex = 1;
@@ -30,6 +19,16 @@ var generateOutput = function(flip) {
   if ($("div.game-link.active").length > 0) {
     mapNumber = $("div.game-link.active a").text().split(" ")[1]
   }
+  
+  $("section").each(function() {
+    var clazz = $(this).attr("class")
+    if (clazz === "radiant" || clazz === "dire") {
+      sides.push(clazz);
+      if ($(this).find("header span.victory-icon")[0]) {
+        winner = $(this).attr("class");
+      }
+    }
+  });
   
   var s = "|map" + mapNumber + "={{Map\n";
 
@@ -133,19 +132,10 @@ $(document).ready(function() {
       teamB = $(teamSelector("dire")).text();
     }
     
-    var winner = getWinner();
-    
-    return [ teamA, teamB, winner ];
+    return [ teamA, teamB ];
   }
   let teamA, teamB;
-  [teamA, teamB, winner] = getTeams();
-  
-  var winnerIcon = " <i class=\"fa fa-trophy\"></i>";
-  if (winner === teamA) {
-    teamA += winnerIcon;
-  } else {
-    teamB += winnerIcon;
-  }
+  [teamA, teamB] = getTeams();
   
   var normal = $("<a>", {
     class: "esports-team esports-link team-link",
