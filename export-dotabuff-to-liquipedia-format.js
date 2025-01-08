@@ -6,11 +6,17 @@
 // @include     https://www.dotabuff.com/matches/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // ==/UserScript==
+
+// Returns "radiant" or "dire"
+var getWinner = function() {
+  return $("section > header > span.victory-icon").closest("section").attr("class");
+}
+
 var generateOutput = function(flip) {
   var i = 0;
   var sides = [];
   var mapNumber = 1;
-  var winner = 0;
+  var winner = getWinner();
   var teamIndex = 1;
   var pickIndex = 1;
   var banIndex = 1;
@@ -24,9 +30,6 @@ var generateOutput = function(flip) {
     var clazz = $(this).attr("class")
     if (clazz === "radiant" || clazz === "dire") {
       sides.push(clazz);
-      if ($(this).find("header span.victory-icon")[0]) {
-        winner = $(this).attr("class");
-      }
     }
   });
   
@@ -136,6 +139,15 @@ $(document).ready(function() {
   }
   let teamA, teamB;
   [teamA, teamB] = getTeams();
+  
+  var winner = getWinner();
+  console.log(winner);
+  var winnerIcon = " <i class=\"fa fa-trophy\"></i>";
+  if (winner === "radiant") {
+    teamA += winnerIcon;
+  } else {
+    teamB += winnerIcon;
+  }
   
   var normal = $("<a>", {
     class: "esports-team esports-link team-link",
