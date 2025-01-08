@@ -29,9 +29,9 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "h2.sc-iGgWBj.jAaqhz";
+  var selector = "h2.sc-iGgWBj";
   waitForEl(selector, function() {
-    var teamName = $("h2.sc-iGgWBj.jAaqhz").text();
+    var teamName = $("h2.sc-iGgWBj").text();
     var output = "";
     output += "{{box|break|padding=2em}}\n";
     output += "{{TeamCard|nostorage=true\n";
