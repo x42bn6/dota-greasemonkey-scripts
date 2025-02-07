@@ -29,9 +29,9 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "div.sc-jItPRW h2.sc-iGgWBj";
+  var selector = "div.sc-gdzXYI.jmWHfm h2.sc-iGgWBj.jhQTwE";
   waitForEl(selector, function() {
-    var teamName = $("div.sc-jItPRW h2.sc-iGgWBj").text();
+    var teamName = $(selector).text();
     var output = "";
     output += "{{box|break|padding=2em}}\n";
     output += "{{TeamCard|nostorage=true\n";
@@ -39,7 +39,7 @@ $(document).ready(function() {
     output += "|ref=<ref>{{cite web|url=" + window.location.href + "|title=" + teamName + "|publisher=Esportal}}</ref>\n";
     
     var i = 1;
-    $("div:contains('Team Members'):last").parent().parent().parent().children("div:nth-child(2)").children("ul").children("li").children("div").find("div.bYJASH.StyledPlayerTableCell").each(function() {
+    $("div:contains('Team Members'):last").parent().parent().parent().children("div:nth-child(2)").children("ul").children("li").children("div").find("div.ciFOxf.StyledPlayerTableCell").each(function() {
       var playerName = $(this).find("a").text();
       var flagContainer = $(this).find("span.fi");
       if (flagContainer.length > 0) {
