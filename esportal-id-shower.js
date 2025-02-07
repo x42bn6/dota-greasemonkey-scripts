@@ -29,10 +29,10 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "a.sc-jvFFNA.bufjTN";
+  var selector = "a.sc-zICCm.jZodAE";
   waitForEl(selector, function() {
     // Append the IDs to the match player entries
-    $("a.sc-jvFFNA.bufjTN").each(function() {
+    $(selector).each(function() {
       var hrefSplit = $(this).attr("href").split("/");
       var id32 = hrefSplit[hrefSplit.length - 1].split("-")[0];
       $(this).parent().append(addIds(id32));
