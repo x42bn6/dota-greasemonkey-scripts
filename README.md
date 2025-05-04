@@ -56,6 +56,13 @@ It also exports the map number (`|map1=`/`|map2=`/etc.); however, this is relian
 
 [Get this script](export-dotabuff-to-liquipedia-format.js)
 
+### Export Stratz match to Liquipedia format
+![Export Stratz to Liquipedia format](images/export-stratz-to-liquipedia-format.png "Export Stratz to Liquipedia format")
+
+This script is the same as the Dotabuff script above, but for Stratz.  However, as Stratz has far more dynamic HTML, this one may be flaky.  You may need to refresh the page.
+
+[Get this script](export-stratz-to-liquipedia-format.js)
+
 ### Export tweet to Liquipedia ref
 ![Export tweet to Liquipedia ref](images/export-tweet-to-liquipedia-ref.png "Export tweet to Liquipedia ref")
 
