@@ -19,7 +19,7 @@ $(document).ready(function() {
   
   // Twitter does this stupid thing where the initial title is "X" then it renders...
   var waitForTitle = function(callback) {
-    if ($("title").text() !== "X") {
+    if ($("title").text() !== "" && $("title").text() !== "X") {
       callback();
     } else {
       setTimeout(function() {
