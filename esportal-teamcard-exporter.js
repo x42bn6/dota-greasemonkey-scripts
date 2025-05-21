@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "div.sc-gdzXYI.jmWHfm h2.sc-iGgWBj.jhQTwE";
+  var selector = "div.sc-fVcfKu.llzlVE h2.sc-iGgWBj.dDqiDM";
   waitForEl(selector, function() {
     var teamName = $(selector).text();
     var output = "";
@@ -39,7 +39,7 @@ $(document).ready(function() {
     output += "|ref=<ref>{{cite web|url=" + window.location.href + "|title=" + teamName + "|publisher=Esportal}}</ref>\n";
     
     var i = 1;
-    $("div:contains('Team Members'):last").parent().parent().parent().children("div:nth-child(2)").children("ul").children("li").children("div").find("div.ciFOxf.StyledPlayerTableCell").each(function() {
+    $("div:contains('Team Members'):last").parent().parent().parent().children("div:nth-child(2)").children("ul").children("li").children("div").find("div.StyledPlayerTableCell").each(function() {
       var playerName = $(this).find("a").text();
       var flagContainer = $(this).find("span.fi");
       if (flagContainer.length > 0) {
@@ -50,7 +50,7 @@ $(document).ready(function() {
   	});
     output += "}}";
     
-    $("div.sc-bVHCgj.RsLAl").append("<span id='candidate' style='cursor: pointer' title='Click to copy'>Click to copy candidate TeamCard</span>");
+    $(selector).parent().append("<span id='candidate' style='cursor: pointer' title='Click to copy'>Click to copy candidate TeamCard</span>");
     
     var lastClickedDiv = null;
     $(document).on('click', '#candidate', function() {
