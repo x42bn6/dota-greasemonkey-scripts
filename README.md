@@ -38,6 +38,20 @@ There is probably a way to do this automatically, but I couldn't figure it out.
 
 [Get this script](faceit-player-id-shower.js)
 
+### Export TeamCard from FACEIT
+![Export TeamCard from FACEIT](images/faceit-teamcard-exporter.png "Export TeamCard from FACEIT")
+
+This exports a team from FACEIT to Liquipedia's TeamCard format.  **You will need to refresh the page in order to view the link.**  Additionally, the team page does not have all the information &mdash; positions, flags, and IDs &mdash; so these must be manually-determined.
+
+[Get this script](faceit-teamcard-exporter.js)
+
+### Export TeamCard from Esportal
+![Export TeamCard from Esportal](images/esportal-teamcard-exporter.png "Export TeamCard from Esportal")
+
+This exports a team from Esportal to Liquipedia's TeamCard format.  The team page does not have all the information &mdash; flags and IDs &mdash; so these must be manually-determined.
+
+[Get this script](esportal-teamcard-exporter.js)
+
 ### Show player IDs on a player's profile on ChallengerMode
 ![Player IDs on ChallengerMode](images/challengermode-id-shower.png "Player IDs on ChallengerMode")
 
