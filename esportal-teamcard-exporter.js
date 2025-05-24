@@ -29,15 +29,27 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "div.sc-fVcfKu.llzlVE h2.sc-iGgWBj.dDqiDM";
-  waitForEl(selector, function() {
-    var teamName = $(selector).text();
+  function waitForText(selector) {
+    return new Promise((resolve) => {
+      const interval = setInterval(function () {
+        const text = $(selector).text().trim();
+        if (text !== 'Content is loading') {
+          clearInterval(interval);
+          resolve(text);
+        }
+      }, 1000);
+    });
+  }
+  
+  var selector = "h2:first";
+  (async () => {
+    var teamName = await waitForText(selector);
     var output = "";
     output += "{{box|break|padding=2em}}\n";
     output += "{{TeamCard|nostorage=true\n";
     output += "|team=" + teamName + "\n";
     output += "|ref=<ref>{{cite web|url=" + window.location.href + "|title=" + teamName + "|publisher=Esportal}}</ref>\n";
-    
+
     var i = 1;
     $("div:contains('Team Members'):last").parent().parent().parent().children("div:nth-child(2)").children("ul").children("li").children("div").find("div.StyledPlayerTableCell").each(function() {
       var playerName = $(this).find("a").text();
@@ -47,17 +59,17 @@ $(document).ready(function() {
         output += "|p" + i + "flag=" + flag +"|p" + i + "=" + playerName + "|p" + i+ "id=\n";
         i++;
       }
-  	});
+    });
     output += "}}";
-    
+
     $(selector).parent().append("<span id='candidate' style='cursor: pointer' title='Click to copy'>Click to copy candidate TeamCard</span>");
-    
+
     var lastClickedDiv = null;
     $(document).on('click', '#candidate', function() {
       navigator.clipboard.writeText(output).catch(function(err) {
         console.error('Error copying to clipboard: ', err);
       });
-      
+
       if (lastClickedDiv) {
         lastClickedDiv.find('.tick').remove();
       }
@@ -67,5 +79,5 @@ $(document).ready(function() {
 
       lastClickedDiv = $(this);
     });
-  });
+  })();
 });
