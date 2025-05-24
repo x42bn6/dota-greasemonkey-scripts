@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
   };
   
-  var selector = "a.sc-zICCm.jZodAE";
+  var selector = "a[href^=\"https://steamcommunity.com/profiles/\"]";
   waitForEl(selector, function() {
     // Append the IDs to the match player entries
     $(selector).each(function() {
