@@ -32,7 +32,7 @@ $(document).ready(function() {
   waitForEl(selector, function() {
     (async () => {
       var teamNameWithBrackets = await waitForText(selector);
-      const removeBrackets = /^(.+)(\(.*\))*$/;
+      const removeBrackets = /^(.+)\(.*\)$/;
       console.log(teamNameWithBrackets.match(removeBrackets));
       var m = teamNameWithBrackets.match(removeBrackets);
       if (m[1]) {
