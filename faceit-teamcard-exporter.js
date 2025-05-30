@@ -32,9 +32,14 @@ $(document).ready(function() {
   waitForEl(selector, function() {
     (async () => {
       var teamNameWithBrackets = await waitForText(selector);
-      const removeBrackets = /^(.+)\(.*\)$/;
+      const removeBrackets = /^(.+)(\(.*\))*$/;
       console.log(teamNameWithBrackets.match(removeBrackets));
-      var teamName = teamNameWithBrackets.match(removeBrackets)[1];
+      var m = teamNameWithBrackets.match(removeBrackets);
+      if (m[1]) {
+        teamName = m[1];
+      } else {
+        teamName = teamNameWithBrackets;
+      }
       var output = "";
       output += "{{box|break|padding=2em}}\n";
       output += "{{TeamCard|nostorage=true\n";
