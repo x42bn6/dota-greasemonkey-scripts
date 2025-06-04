@@ -39,15 +39,23 @@ var generateOutput = function(flip) {
     var output = ""
     var picks = [];
     var bans = [];
-    $("div.picks-inline:eq(" + n + ") div div div a[href^='/heroes/'] img[src^='/assets/']").each(function() {
-      var ban = $(this).parent().parent().parent().parent().attr("class") === "ban";
-      var hero = $(this).attr("alt").toLowerCase();
-      if (ban) {
-        bans.push(hero);
-      } else {
-        picks.push(hero);
-      }
-    });
+    // Some allpick matches don't have draft.  But we can still extract picks
+    if ($("div.picks-inline").length > 0) {
+      $("div.picks-inline:eq(" + n + ") div div div a[href^='/heroes/'] img[src^='/assets/']").each(function() {
+        var ban = $(this).parent().parent().parent().parent().attr("class") === "ban";
+        var hero = $(this).attr("alt").toLowerCase();
+        if (ban) {
+          bans.push(hero);
+        } else {
+          picks.push(hero);
+        }
+      });
+    } else {
+      console.log($("table.match-team-table:eq(" + n + ")"));
+      $("table.match-team-table:eq(" + n + ") tbody tr td div div a[href^='/heroes/'] img[src^='/assets/heroes/']").each(function() {
+        picks.push($(this).attr("alt").toLowerCase());
+      });
+    }
 
     return { side, picks, bans, winner };
   }
