@@ -28,18 +28,18 @@ $(document).ready(function() {
     });
   }
   
-  var selector = "h4[class*=\"styles__Nickname\"]";
+  var selector = "h4[class*=\"styles__TeamName\"]";
   waitForEl(selector, function() {
     (async () => {
       var teamNameWithBrackets = await waitForText(selector);
       const removeBrackets = /^(.+)\(.*\)$/;
-      console.log(teamNameWithBrackets.match(removeBrackets));
       var m = teamNameWithBrackets.match(removeBrackets);
-      if (m[1]) {
+      if (m && m[1]) {
         teamName = m[1];
       } else {
         teamName = teamNameWithBrackets;
       }
+      console.log("TEST: " + teamName);
       var output = "";
       output += "{{box|break|padding=2em}}\n";
       output += "{{TeamCard|nostorage=true\n";
