@@ -102,7 +102,7 @@ $(document).ready(function() {
     let header = $("div.hitagi__sc-1ah81hi-0.hitagi__sc-f2pi9q-0.hitagi__sc-1qujzc6-1.jDLHDm.feqtbA.enFVqj")
     let containsWon = function(el) {
       let res = $("div", el).filter(function() { 
-        return $(this).text() === "Won";
+        return $(this).text().includes("Won");
       });
       return res.length > 0;
     }
