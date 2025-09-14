@@ -85,8 +85,8 @@ class Series {
         teamB: map.teamB,
         factionA: map.factionA,
         factionB: map.factionB,
-        picksA: map.picksA,
-        picksB: map.picksB,
+        picksA: map.picksA.concat(Array(7 - map.picksA.length).fill("")),
+        picksB: map.picksB.concat(Array(7 - map.picksB.length).fill("")),
         bansA: map.bansA.concat(Array(7 - map.bansA.length).fill("")),
         bansB: map.bansB.concat(Array(7 - map.bansB.length).fill(""))
       };
@@ -101,8 +101,8 @@ class Series {
         teamB: map.teamA,
         factionA: map.factionB,
         factionB: map.factionA,
-        picksA: map.picksB,
-        picksB: map.picksA,
+        picksA: map.picksB.concat(Array(7 - map.picksB.length).fill("")),
+        picksB: map.picksA.concat(Array(7 - map.picksA.length).fill("")),
         bansA: map.bansB.concat(Array(7 - map.bansB.length).fill("")),
         bansB: map.bansA.concat(Array(7 - map.bansA.length).fill(""))
       };
@@ -202,16 +202,16 @@ let processSeries = function() {
     const bansA = [];
     let factionA;
     let factionB;
-    $(this).children("div").eq(1).children("div").eq(0).children("div").eq(1).each(function() {
-      $(this).children("div").eq(0).find("img").each(function() {
+    $(this).children("div").eq(1).children("div").eq(0).each(function() {
+      $(this).children("div").eq(1).children("div").eq(0).find("img").each(function() {
         picksA.push($(this).attr("alt").toLowerCase());
       });
       
-      $(this).children("div").eq(1).find("img").each(function() {
+      $(this).children("div").eq(1).children("div").eq(1).find("img").each(function() {
         bansA.push($(this).attr("alt").toLowerCase());
       });
-
-      if ($(this).find("span.tw-text-faction-radiant").length) {
+      
+      if ($(this).children("div").eq(0).find("span.tw-text-faction-radiant").length) {
         factionA = "radiant";
         factionB = "dire";
       } else {
@@ -246,7 +246,7 @@ let copyToClipboard = function(s) {
 let createCopyMatchIdButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: "📋",
+    html: "??",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -279,7 +279,7 @@ let getFormattedTeamName = function(map, team) {
 let createCopyMatchAVsBButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: getFormattedTeamName(series.maps[mapNumber], Team.A) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.B) + "📋",
+    html: getFormattedTeamName(series.maps[mapNumber], Team.A) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.B) + "??",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -293,7 +293,7 @@ let createCopyMatchAVsBButton = function(series, mapNumber, id) {
 let createCopyMatchBVsAButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: getFormattedTeamName(series.maps[mapNumber], Team.B) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.A) + "📋",
+    html: getFormattedTeamName(series.maps[mapNumber], Team.B) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.A) + "??",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -308,7 +308,7 @@ let createTick = function(id) {
   return $("<span>", {
     id: id,
     class: "x42bn6-tick",
-    html: "✓"
+    html: "?"
   });
 }
 
