@@ -246,7 +246,7 @@ let copyToClipboard = function(s) {
 let createCopyMatchIdButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: "??",
+    html: "📋",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -279,7 +279,7 @@ let getFormattedTeamName = function(map, team) {
 let createCopyMatchAVsBButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: getFormattedTeamName(series.maps[mapNumber], Team.A) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.B) + "??",
+    html: getFormattedTeamName(series.maps[mapNumber], Team.A) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.B) + "📋",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -293,7 +293,7 @@ let createCopyMatchAVsBButton = function(series, mapNumber, id) {
 let createCopyMatchBVsAButton = function(series, mapNumber, id) {
   return $("<a>", {
     class: "",
-    html: getFormattedTeamName(series.maps[mapNumber], Team.B) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.A) + "??",
+    html: getFormattedTeamName(series.maps[mapNumber], Team.B) + " vs. " + getFormattedTeamName(series.maps[mapNumber], Team.A) + "📋",
     href: "#",
     click: function(event) {
       event.preventDefault();
@@ -308,7 +308,7 @@ let createTick = function(id) {
   return $("<span>", {
     id: id,
     class: "x42bn6-tick",
-    html: "?"
+    html: "✓"
   });
 }
 
