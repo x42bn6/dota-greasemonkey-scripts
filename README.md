@@ -70,6 +70,23 @@ It also exports the map number (`|map1=`/`|map2=`/etc.); however, this is relian
 
 [Get this script](export-dotabuff-to-liquipedia-format.js)
 
+### Export Dotabuff series page
+![Export Dotabuff series page](images/export-dotabuff-series-page.png "Export Dotabuff series page")
+
+In September 2025, Dotabuff introduced a new series page, allowing you to see all the matches in a series in one go (the URL has "esports/series" in it).  This script allows you to extract data for an entire series in one go, making it potentially faster than the script above (you only need one tab).  But not only that, Dotabuff shows live match drafts on the page in a separate section, allowing us to populate match drafts without needing to wait for the series to complete.
+
+This script can:
+
+* Export completed match IDs
+* Export completed match drafts
+* Export live match drafts
+
+However, it cannot extract live match IDs, as this isn't available on the page.  It is, however, available on the league page, and I have a [separate script](#copy-match-id-for-live-match-on-dotabuff) for this.
+
+This script is slightly more brittle than before, as something is modifying the DOM at the start, so the script waits one second before adding these elements.  If they don't appear, or it fails, refresh the tab.  Additionally, this is likely still work-in-progress from Dotabuff's perspective, so might break.
+
+[Get this script](export-dotabuff-series-page.js)
+
 ### Export Stratz match to Liquipedia format
 ![Export Stratz to Liquipedia format](images/export-stratz-to-liquipedia-format.png "Export Stratz to Liquipedia format")
 
