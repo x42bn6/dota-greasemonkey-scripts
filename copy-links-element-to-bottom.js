@@ -9,17 +9,25 @@
 (function() {
   "use strict";
   
-  function getNormalizedPath() {
+  function getNormalisedPath() {
     return window.location.pathname.replace(/\/$/, "");
   }
   
-  function findInheritedPanelHTML() {
-    let path = getNormalizedPath();
-    console.log(`Retrieving from ${path}`);
+  function isIndexPhp(path) {
     // If the last element is "index.php", don't use this
     const pathSplit = path.split("/");
     if (pathSplit[pathSplit.length - 1] === "index.php") {
       console.log("Skipping index.php");
+      return true;
+    }
+    
+    return false;
+  }
+  
+  function findInheritedPanelHTML() {
+    let path = getNormalisedPath();
+    console.log(`Retrieving from ${path}`);
+    if (isIndexPhp(path)) {
       return null;
     }
 
@@ -40,7 +48,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     const el = document.querySelector("div.infobox-icons");
     if (el) {
-      console.log(el);
       const clone = el.cloneNode(true);
       clone.style.position = "fixed";
       clone.style.width = "auto";
@@ -57,8 +64,13 @@
       });
       
       el.parentElement.appendChild(clone);
-
-      const key = `wiki:panel:${getNormalizedPath()}`;
+    
+			// Show the icons if it is an index.php path (e.g. looking at a revision from a page's history), but don't save it to localStorage
+      const normalisedPath = getNormalisedPath();
+      if (isIndexPhp(normalisedPath)) {
+        return null;
+      }
+      const key = `wiki:panel:${normalisedPath}`;
       localStorage.setItem(key, clone.outerHTML);
     } else {
       const html = findInheritedPanelHTML();
