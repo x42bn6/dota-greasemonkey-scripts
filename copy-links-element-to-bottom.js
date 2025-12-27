@@ -15,6 +15,13 @@
   
   function findInheritedPanelHTML() {
     let path = getNormalizedPath();
+    console.log(`Retrieving from ${path}`);
+    // If the last element is "index.php", don't use this
+    const pathSplit = path.split("/");
+    if (pathSplit[pathSplit.length - 1] === "index.php") {
+      console.log("Skipping index.php");
+      return null;
+    }
 
     while (path.length > 0) {
       const key = `wiki:panel:${path}`;
