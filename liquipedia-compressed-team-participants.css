@@ -8,14 +8,13 @@ div.team-participant__grid div.team-participant-card {
 }
 
 div.team-participant__grid span.team-template-image-icon {
-    width: 16px !important;
-    height: inherit !important;
+    width: auto !important;
+    height: auto !important;
     line-height: inherit !important;
 }
 
 div.team-participant__grid span.team-template-image-icon img {
-    width: 16px !important;
-    height: 16px !important;
+    height: 17px !important;
 }
 
 div.team-participant__grid div.team-participant-card__label {
