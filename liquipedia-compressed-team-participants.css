@@ -45,14 +45,26 @@ div.team-participant__grid div.team-participant-card__notification {
 
 div.team-participant__grid div.team-participant-card__qualifier {
     padding: 0;
-    min-height: inherit !important;
+    min-height: 25px !important;
     margin: 0;
 }
 
-div.team-participant__grid span.league-icon-small-image img {
-    width: 16px !important;
-    height: 16px !important;
+div.team-participant__grid span.placement-box {
+    padding: 0;
+    height: inherit;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: inherit;
+}
+
+div.team-participant__grid span.league-icon-small-image {
+    width: auto !important;
+    height: auto !important;
     line-height: inherit !important;
+}
+
+div.team-participant__grid span.league-icon-small-image img {
+    height: 16px !important;
 }
 
 div.team-participant__grid span.team-template-image-icon i {
@@ -62,12 +74,6 @@ div.team-participant__grid span.team-template-image-icon i {
 div.team-participant__grid span.league-icon-small-image {
     width: 16px !important;
     height: 16px !important;
-}
-
-div.team-participant__grid span.team-participant-card__qualifier-placement {
-    height: inherit !important;
-    line-height: inherit !important;
-    padding: 0;
 }
 
 div.team-participant__grid div.switch-pill {
