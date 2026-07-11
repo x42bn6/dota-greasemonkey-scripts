@@ -17,78 +17,7 @@ div.team-participant__grid span.team-template-image-icon img {
     height: 17px !important;
 }
 
-div.team-participant__grid div.team-participant-card__label {
-    text-align: center;
-}
-
-div.team-participant__grid div.team-participant-card__member {
-    padding: 0;
-}
-
-div.team-participant__grid div.team-participant-card__notifications {
-    margin: 0;
-}
-
-div.team-participant__grid div.team-participant-card__notes-header {
-    margin: 0;
-    padding: 0;
-}
-
-div.team-participant__grid div.team-participant-card__notes {
-    margin: 0;
-    padding: 0.25em;
-}
-
-div.team-participant__grid div.team-participant-card__notification {
-    padding: 0;
-}
-
-div.team-participant__grid div.team-participant-card__qualifier {
-    padding: 0;
-    min-height: 25px !important;
-    margin: 0;
-}
-
-div.team-participant__grid span.placement-box {
-    padding: 0;
-    height: inherit;
-    font-size: 12px;
-    font-weight: normal;
-    line-height: inherit;
-}
-
-div.team-participant__grid span.league-icon-small-image {
-    width: auto !important;
-    height: auto !important;
-    line-height: inherit !important;
-}
-
-div.team-participant__grid span.team-template-image-icon i {
-    font-size: 16px !important;
-}
-
-div.team-participant__grid div.switch-pill {
-    padding: 0;
-}
-
-div.team-participant__grid div.switch-pill-option {
-    padding: 0 !important;
-}div.team-participant__grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-div.team-participant__grid div.team-participant-card {
-    padding: 0;
-    gap: 0;
-}
-
-div.team-participant__grid span.team-template-image-icon {
-    width: auto !important;
-    height: auto !important;
-    line-height: inherit !important;
-}
-
-div.team-participant__grid span.team-template-image-icon img {
+div.team-participant__grid span.league-icon-small-image img {
     height: 17px !important;
 }
 
@@ -138,17 +67,8 @@ div.team-participant__grid span.league-icon-small-image {
     line-height: inherit !important;
 }
 
-div.team-participant__grid span.league-icon-small-image img {
-    height: 16px !important;
-}
-
 div.team-participant__grid span.team-template-image-icon i {
     font-size: 16px !important;
-}
-
-div.team-participant__grid span.league-icon-small-image {
-    width: 16px !important;
-    height: 16px !important;
 }
 
 div.team-participant__grid div.switch-pill {
