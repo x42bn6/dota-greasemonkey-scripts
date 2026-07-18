@@ -13,16 +13,12 @@ div.team-participant__grid span.team-template-image-icon, div.team-participant__
     line-height: inherit !important;
 }
 
-div.team-participant__grid span.team-template-image-icon img {
-    height: 17px !important;
-}
-
-div.team-participant__grid span.league-icon-small-image img {
-    max-width: 17px;
-    max-height: 17px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+div.team-participant__grid span.team-template-image-icon img, div.team-participant__grid span.league-icon-small-image img {
+    max-width: 17px !important;
+    max-height: 17px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
 }
 
 div.team-participant__grid div.team-participant-card__label {
