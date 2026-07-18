@@ -7,7 +7,7 @@ div.team-participant__grid div.team-participant-card {
     gap: 0;
 }
 
-div.team-participant__grid span.team-template-image-icon {
+div.team-participant__grid span.team-template-image-icon, div.team-participant__grid span.league-icon-small-image {
     width: auto !important;
     height: auto !important;
     line-height: inherit !important;
@@ -18,7 +18,11 @@ div.team-participant__grid span.team-template-image-icon img {
 }
 
 div.team-participant__grid span.league-icon-small-image img {
-    height: 17px !important;
+    max-width: 17px;
+    max-height: 17px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 div.team-participant__grid div.team-participant-card__label {
@@ -59,12 +63,6 @@ div.team-participant__grid span.placement-box {
     font-size: 12px;
     font-weight: normal;
     line-height: inherit;
-}
-
-div.team-participant__grid span.league-icon-small-image {
-    width: auto !important;
-    height: auto !important;
-    line-height: inherit !important;
 }
 
 div.team-participant__grid span.team-template-image-icon i {
