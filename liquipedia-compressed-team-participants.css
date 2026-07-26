@@ -5,6 +5,7 @@ div.team-participant__grid {
 div.team-participant__grid div.team-participant-card {
     padding: 0;
     gap: 0;
+    max-width: 250px;
 }
 
 div.team-participant__grid span.team-template-image-icon, div.team-participant__grid span.league-icon-small-image {
